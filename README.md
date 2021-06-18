@@ -1,16 +1,8 @@
-# covid_tracker
+# COVID Tracker
 
-A new Flutter project.
+### This is an app built with the [Flutter](https://flutter.dev) Framework. It's a simple project I made to learn flutter!
 
-## Getting Started
+## Install
+### Unfortunately, This app is only available for Android, as I don't own a Mac to build the app properly.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Install the APK [here](https://github.com/huss-a/flutter-covid-tracker/releases)

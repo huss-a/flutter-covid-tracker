@@ -1,5 +1,5 @@
-import 'package:covid_tracker/AboutPage.dart';
-import 'package:covid_tracker/Homepage.dart';
+import 'screens/AboutPage.dart';
+import 'screens/Homepage.dart';
 import "package:flutter/material.dart";
 
 void main() => runApp(MyApp());
@@ -28,7 +28,6 @@ class _MyAppState extends State<MyApp> {
               IconButton(
                 icon: Icon(Icons.info),
                 onPressed: () {
-                  print("hello");
                   Navigator.push(
                     ctx,
                     MaterialPageRoute(builder: (ctx) => AboutPage()),

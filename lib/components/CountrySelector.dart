@@ -1,10 +1,12 @@
-import 'package:covid_tracker/components/CustomButton.dart';
 import 'package:flutter/material.dart';
+
+import 'package:covid_tracker/components/CustomButton.dart';
 
 class CountrySelector extends StatefulWidget {
   final List<dynamic> countries;
   final Function(String) countryChangeCallback;
-  CountrySelector(this.countries, this.countryChangeCallback);
+  final String currentCountry;
+  CountrySelector(this.countries, this.countryChangeCallback, this.currentCountry);
 
   @override
   _CountrySelectorState createState() => _CountrySelectorState();

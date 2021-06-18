@@ -1,13 +1,12 @@
-import 'package:covid_tracker/components/CustomButton.dart';
-
-import './CountrySelector.dart';
-import './DataBox.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import './typedefs/CovidData.dart';
-import './LocationTitle.dart';
+import 'package:covid_tracker/components/CustomButton.dart';
+import 'package:covid_tracker/components/CountrySelector.dart';
+import 'package:covid_tracker/components/DataBox.dart';
+import 'package:covid_tracker/components/LocationTitle.dart';
+import 'package:covid_tracker/typedefs/CovidData.dart';
 
 Future<CovidData> fetchData() async {
   final res = await http.get(Uri.parse("https://api.covid19api.com/summary"));
@@ -73,7 +72,9 @@ class _HomepageState extends State<Homepage> {
                         ),
                         child: CountrySelector(
                             (snap.data as CovidData).Countries,
-                            (value) => setState(() => _currentCountry = value)),
+                            (value) => setState(() => _currentCountry = value),
+                            _currentCountry,
+                        ),
                       ),
                       CustomButton(
                         onPressed: runFuture,
@@ -82,12 +83,14 @@ class _HomepageState extends State<Homepage> {
                     ],
                   ),
                 );
-              } else if (snap.hasError)
+              } else if (snap.hasError) {
+                print(snap.error);
+                print(snap.stackTrace);
                 child = Text(
-                  snap.error.toString(),
+                  "snap err " + snap.error.toString(),
                   key: ValueKey(2),
                 );
-              else
+              } else
                 child = SizedBox(
                   key: ValueKey(3),
                   height: 150,
